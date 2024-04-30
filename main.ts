@@ -1,10 +1,12 @@
-let ir_waarde = 0
 basic.forever(function () {
-    basic.showNumber(ir_waarde)
-})
-basic.forever(function () {
-    ir_waarde = IR.IR_read()
-})
-basic.forever(function () {
-    maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 12)
+    basic.pause(1000)
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 90)
+    maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 90)
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 90)
+    maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 90)
+    basic.pause(1000)
+    maqueen.motorStop(maqueen.Motors.M1)
+    maqueen.motorStop(maqueen.Motors.M2)
+    basic.pause(1000)
+    maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 179)
 })
